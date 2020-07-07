@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel ="tests">
+<listeners>
+<listener class-name="listenerClasses.Listeners"/>
+</listeners>
+  <test name="Validation of Text">
+    <classes>
+      <class name="Academy.E2EProject.ValidateText"/>
+     
+    </classes>
+  </test>
+  <test name="Home Page Navigation">
+    <classes>
+      
+      <class name="Academy.E2EProject.HomePage"/>
+      
+    </classes>
+  </test>
+  <test name="Contact page navigation">
+    <classes>
+      <class name="Academy.E2EProject.ContactNevigation"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

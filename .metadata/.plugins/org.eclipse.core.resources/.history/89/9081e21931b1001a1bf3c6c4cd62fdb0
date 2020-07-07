@@ -1,0 +1,21 @@
+package Academy.E2EProject;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import pageObjects.LandingPage;
+import resources.Base;
+
+public class HomePage extends Base{
+	@Test
+	public void getHomePage() throws IOException{
+		driver=initializeDriver();
+		driver.get(prop.getProperty("BaseUrl"));
+		LandingPage l=new LandingPage(driver);
+		l.getLogin().click();
+		
+	}
+
+}

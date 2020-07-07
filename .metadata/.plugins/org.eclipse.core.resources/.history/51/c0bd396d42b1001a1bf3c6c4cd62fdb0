@@ -1,0 +1,20 @@
+package Academy.E2EProject;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import pageObjects.LandingPage;
+import resources.Base;
+
+public class ValidateText extends Base{
+	
+	@Test
+	public void getTextValue() throws IOException{
+		driver= initializeDriver();
+		driver.get(prop.getProperty("BaseUrl"));
+		LandingPage lp= new LandingPage(driver);
+		System.out.println(lp.getTitle().getText());
+	}
+
+}

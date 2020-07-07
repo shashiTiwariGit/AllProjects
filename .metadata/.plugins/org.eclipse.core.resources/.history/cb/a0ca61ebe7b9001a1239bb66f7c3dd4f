@@ -1,0 +1,42 @@
+package oAuth2Example;
+
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+
+import static io.restassured.RestAssured.*;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OAuthExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\JarsandRequirement\\chromedriver_win32\\chromedriver1.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Flegacy%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hANz1_e4NhXuWZcnDu36vw-LptmxXlCIs8KYTDUajJEwfuFlMxXrEm8Z3tMdCmM1V9iU2NRDFlHzNl9L6CCOpYtbZksL30Gkx8EBu2ZhTnMgQ26q1EygUO1pVCI-P1HLpcSba43ztu3FyCwanNeHWdeHYUSIH45aJRO09JL7LRCvEfLAjHghOEAhg_1sd9sG6cmLiBx647tCPAzmKrQYIG4yF9dmK4w_-ETpAHuMlmavO6k3oGA_INLg4x3N1DZhuXtq8Ct3x9F9O5J3_xmTlV7a-DDfiTOD8Oae6nWfp6Z5k2YD0OHKaSh7HWZzWDxuj5DYuFTX4fNn5wW_hdhg9QXxT7SqsNMBvMhcQxTXbB9bVzU2i_BFLlhp7fglQWysabidoM3p7weCzrcPPmW81xg8d300wxQGupye6whE5l146wRtD2QwTjkRvzK0l9sI4YznyIVK%26as%3D6jRUMifPiKxM4NKxlN1drQ%23&sacu=1&oauth=1&rip=1");
+		driver.findElement(By.id("Email")).sendKeys("shash.tiwari.3@gmail.com");
+		driver.findElement(By.id("next")).click();
+		
+		
+		String accessTokenResponse=given()
+		.queryParams("code","")
+		.queryParams("client_id","692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
+		.queryParams("client_sceret","erZOWM9g3UtwNRj340YYaK_W")
+		.queryParams("redirect_uri","https://rahulshettyacademy.com/getCourse.php")
+		.queryParams("grant_type","authorization_code")
+		.when().log().all()
+		.post("https://www.googleapis.com/oauth2/v4/token").asString();
+		
+		JsonPath js=new JsonPath(accessTokenResponse);
+		String accessToken = js.getString("access_token");
+		
+		String response=given().log().all().queryParam("access_token",accessToken )
+		.when().get("https://rahulshettyacademy.com/getCourse.php").asString();
+		System.out.println(response);
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package ObjectRepository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class HomePage {
+	WebDriver driver;
+	public WebElement startPracticingButton=driver.findElement(By.id("btn_basic_example"));
+	
+
+}

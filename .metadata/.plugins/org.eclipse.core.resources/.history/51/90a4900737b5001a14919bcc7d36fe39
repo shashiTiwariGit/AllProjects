@@ -1,0 +1,39 @@
+package stepDefinations;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDefination {
+	
+	@Given("^User is in NetBanking landing page$")
+	public void user_is_on_NethBanking_Landing(){
+		System.out.println("User is in NetBanking landing page");
+	}
+	@When("^User login into applicattion with username and password$")
+	public void user_is_on_NethBanking_Landing1(){
+		
+	}
+	@Then("^Home page should be displayed$")
+	public void user_is_on_NethBanking_Landing2(){
+		
+	}
+	@And("^Cards are displayed$")
+	public void user_is_on_NethBanking_Landing3(){
+		
+	}
+	@Given("^User is in NetBanking landing page$")
+	public void user_is_on_NethBanking_Landing4(){
+		
+	}
+	@Given("^User is in NetBanking landing page$")
+	public void user_is_on_NethBanking_Landing5(){
+		
+	}
+	@Given("^User is in NetBanking landing page$")
+	public void user_is_on_NethBanking_Landing6(){
+		
+	}
+
+}

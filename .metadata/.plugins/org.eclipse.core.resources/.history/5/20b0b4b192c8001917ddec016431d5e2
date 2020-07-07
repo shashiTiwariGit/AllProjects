@@ -1,0 +1,27 @@
+package examples;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class dropDownExample {
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\Jars and Requirement\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.seleniumeasy.com/test/");
+		driver.manage().window().maximize();
+		driver.findElement(By.partialLinkText("Input Forms")).click();
+		driver.findElement(By.partialLinkText("Simple Form Demo")).click();
+		driver.findElement(By.xpath("//input[@id='user-message']")).sendKeys("this is a sample text entered by script");
+		driver.findElement(By.xpath("//button[@type='button' and @onclick='showInput();']")).click();
+		String text1 = driver.findElement(By.xpath("//span[@id='display']")).getText();
+		System.out.println("text entered =" +text1);
+		
+		driver.findElement(By.xpath("//input[@id='sum1']")).sendKeys("7");
+		driver.findElement(By.xpath("//input[@id='sum2']")).sendKeys("6");
+		driver.findElement(By.xpath("//button[@type='button' and @onclick='return total()']")).click();
+		String text1 = driver.findElement(By.xpath("//span[@id='displayvalue']")).getText();
+	}
+
+}

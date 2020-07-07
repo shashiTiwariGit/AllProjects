@@ -1,0 +1,192 @@
+package test;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class JavaPrograms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = (int) Math.round(1.4);
+		System.out.println(a);
+		ArrayList<Integer> input1 = new ArrayList<Integer>();
+		int N = 24;
+		if (N % 2 != 0 || N % 2 == 0 & N > 6 | N < 20)
+			System.out.println("Weird");
+		else if (N % 2 == 0 && N > 2 | N < 5 || N % 2 == 0 && N < 20)
+			System.out.println("Not Weird");
+
+		// int[] input = {7,56,20,4,4,5,7,7,5,6,9,32};
+		input1.add(7);
+		input1.add(4);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(3);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(7);
+		String sentence = "This is a sample test sentence for rest cases";
+		System.out.println(sentence);
+		System.out.println(rearangeSentence(sentence));
+		double d = 10;
+
+		printTable();
+		// findPrime(3, 10);
+
+		// System.out.println(input1);
+		// System.out.println(numberOfOccurances(input1));
+
+		// nextGreaterNumber(input);
+
+		// Object[] a = findDuplicate(input1);
+
+		// System.out.println(Arrays.toString(a));
+		// printTable();
+	}
+
+	public static String rearangeSentence(String sentence) {
+
+		String[] temp = sentence.split(" ");
+		sentence = "";
+
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = i + 1; j < temp.length; j++) {
+				if (temp[i].length() < temp[j].length()) {
+
+					String temprory = temp[i];
+					temp[i] = temp[j];
+					temp[j] = temprory;
+
+				}
+
+			}
+			sentence = sentence + " " + temp[i].toLowerCase();
+
+		}
+
+		sentence = sentence.substring(1, 2).toUpperCase() + sentence.substring(2);
+		return sentence;
+	}
+
+	public static String rearangeSentence1(String sentence) {
+		String[] temp = sentence.split(" ");
+		HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+		sentence = "";
+		for (int i = 0; i < temp.length; i++) {
+			m.put(i, temp[i].length());
+		}
+
+		return sentence;
+
+	}
+
+	public static void nextGreaterNumber(int[] input) {
+		for (int i = 0; i < input.length; i++) {
+			int temp = -1;
+			for (int j = i + 1; j < input.length; j++) {
+				if (input[i] < input[j]) {
+					temp = input[j];
+					break;
+				}
+			}
+			System.out.print(temp + ",");
+		}
+
+	}
+
+	public static void printTable() {
+		int a = (int) Math.round(1.5);
+		System.out.println(a);
+		Scanner console = new Scanner(System.in);
+
+		int num;
+
+		System.out.print("Enter any positive integer: ");
+		num = console.nextInt();
+		Pattern pattern = null;
+
+		System.out.println("Multiplication Table of " + num);
+
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(num + " x " + i + " = " + (num * i));
+		}
+	}
+
+	public static void findPrime(int start, int end) {
+
+		while (start < end) {
+			boolean flag = false;
+			for (int i = 2; i < start / 2; i++) {
+
+				if (start % i == 0) {
+					flag = true;
+					System.out.println(start + " is divisible by " + i);
+					break;
+				}
+				if (!flag)
+					System.out.println(start + ", ");
+
+			}
+		}
+
+	}
+
+	public static void findDuplicate(int[] input) {
+		for (int i = 0; i < input.length; i++) {
+			for (int j = i + 1; j < input.length; j++) {
+				if (input[i] == input[j]) {
+					System.out.println("found one Duplicate number" + input[i]);
+				}
+			}
+
+		}
+	}
+
+	public static Object[] findDuplicate(ArrayList<Integer> input1) {
+		HashSet h = new HashSet(input1);
+		return h.toArray();
+		/*
+		 * for (int i=0;i<input1.size();i++) { for(int j =
+		 * i+1;j<input1.size();j++ ){
+		 * 
+		 * if (input1.get(i)==input1.get(j)){
+		 * 
+		 * input1.remove(j); j=j-1; } }
+		 * 
+		 * } return input1;
+		 */
+	}
+
+	public static Map<Integer, Integer> numberOfOccurances(ArrayList<Integer> input1) {
+
+		Map<Integer, Integer> output = new HashMap<Integer, Integer>();
+		for (Integer integer : input1) {
+
+			if (output.containsKey(integer)) {
+				output.put(integer, (output.get(integer)) + 1);
+
+			} else {
+				output.put(integer, 1);
+			}
+
+		}
+		return output;
+
+	}
+}

@@ -1,0 +1,27 @@
+package HackerRank;
+
+public class Day6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public String evenOddString(String s){
+		
+		String [] a=s.split("");
+		s="";
+		String even="",odd="";
+		for (int i=0;i<a.length;i++){
+			if (i%2==0){
+				even=even+a[i];
+			}
+			else{
+				odd=odd+a[i];
+			}
+			s=even+" "+odd;
+		}
+		
+		return s;
+	}
+
+}

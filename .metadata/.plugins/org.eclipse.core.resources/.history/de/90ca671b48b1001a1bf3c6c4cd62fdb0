@@ -1,0 +1,31 @@
+package Academy.E2EProject;
+
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObjects.LandingPage;
+import pageObjects.LoginPage;
+import resources.Base;
+
+public class ContactNevigation extends Base{
+	@Test
+	public void getHomePage() throws IOException{
+		driver=initializeDriver();
+		
+		LandingPage l=new LandingPage(driver);
+		l.getContact().click();
+		AssertJUnit.assertTrue(driver.getTitle().equalsIgnoreCase(prop.getProperty("Title")));
+		AssertJUnit.assertEquals(driver.getCurrentUrl(), prop.getProperty("ContactUrl"));
+		driver.quit();
+		
+		
+	}
+	
+
+}

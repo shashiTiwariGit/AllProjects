@@ -1,0 +1,5 @@
+browser=Chrome
+ChromeDriver=./Browsers/chromedriver.exe
+FirefoxDriver=./Browsers/chromedriver.exe
+IEDriver=./Browsers/chromedriver.exe
+BaseUrl=https://www.seleniumeasy.com/test/

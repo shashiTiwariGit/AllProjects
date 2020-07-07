@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (1)" project="E2EProject" tests="5" started="5" failures="0" errors="2" ignored="0">
+  <testsuite name="cucumberOptions.TestRunner" time="4.779">
+    <testsuite name="Feature: Login into Application" time="4.779">
+      <testsuite name="Scenario: Login to page using username and password" time="4.779" incomplete="true">
+        <error>java.lang.NullPointerException&#13;
+	at pageObjects.LoginPage.getAlertText(LoginPage.java:45)&#13;
+	at stepDefinations.StepDefination.verfiy_that_user_is_succesfully_logged_in(StepDefination.java:55)&#13;
+	at ✽.Then Verfiy that user is getting Invalid Username password text(login.feature:8)&#13;
+&#13;
+</error>
+        <testcase name="Given initialize driver with chrome browser" classname="Scenario: Login to page using username and password" time="0.633"/>
+        <testcase name="And Navigate to &quot;http://www.qaclickacademy.com/&quot; site" classname="Scenario: Login to page using username and password" time="3.709"/>
+        <testcase name="And Click on Login link on Home page to land on secure sign in page" classname="Scenario: Login to page using username and password" time="0.383"/>
+        <testcase name="When user enters &quot;test@123.com&quot; and &quot;Password&quot; and logs in" classname="Scenario: Login to page using username and password" time="0.001"/>
+        <testcase name="Then Verfiy that user is getting Invalid Username password text" classname="Scenario: Login to page using username and password" time="0.053">
+          <error>java.lang.NullPointerException&#13;
+	at pageObjects.LoginPage.getAlertText(LoginPage.java:45)&#13;
+	at stepDefinations.StepDefination.verfiy_that_user_is_succesfully_logged_in(StepDefination.java:55)&#13;
+	at ✽.Then Verfiy that user is getting Invalid Username password text(login.feature:8)&#13;
+&#13;
+</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,79 @@
+package listenerClasses;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.logging.Logs;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
+import utilities.Base;
+import utilities.ExtendReporterNG;
+
+public class Listeners extends Base implements ITestListener {
+	ExtentReports extent = ExtendReporterNG.getReporterObject();
+	ExtentTest test;
+
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+
+		test = extent.createTest(result.getMethod().getMethodName());
+
+	}
+
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+		test.log(Status.PASS, "Test Case Passed"+result.getMethod().getMethodName());
+	}
+
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		String failedMethod = result.getMethod().getMethodName();
+		System.out.println("Inside Failure Method");
+		
+		WebDriver driver = null;
+		test.fail(result.getThrowable());
+		try {
+			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
+					.get(result.getInstance());
+			System.out.println("Inside Failure Try 1");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			getScreenShotPath(failedMethod, driver);
+			System.out.println("Inside Failure Try 2");
+			// Capture Screen Shots
+		} catch (IOException ioException) {
+			ioException.printStackTrace();
+		}
+	}
+
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		extent.flush();
+
+	}
+
+}

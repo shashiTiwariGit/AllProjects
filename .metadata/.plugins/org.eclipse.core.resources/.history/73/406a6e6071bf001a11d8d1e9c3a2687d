@@ -1,0 +1,22 @@
+package test;
+
+import java.util.ArrayList;
+
+public class Test3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1="ABC",s2="ABCBCBBCB";
+		int count=GetPossibleSubstrings(s1,s2);
+
+	}
+
+	private static int GetPossibleSubstrings(String s1, String s2) {
+		// TODO Auto-generated method stub
+		int count=0;
+		ArrayList<Integer> al1,al2,al3=new ArrayList<Integer>();
+		
+		return count;
+	}
+
+}

@@ -1,0 +1,53 @@
+package test;
+
+import java.util.Scanner;
+
+public class JavaPrograms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] input = {7,56,20,4,4,5,5,6,9,32};
+		nextGreaterNumber(input);
+		printTable();
+	}
+
+	public static void nextGreaterNumber(int[] input) {
+		for (int i = 0; i < input.length - 1; i++) {
+			int temp = -1;
+			for (int j = i + 1; j < input.length; j++) {
+				if (input[i] < input[j]) {
+					temp = input[j];
+					break;
+				} 
+			}
+			System.out.print(temp + ",");
+		}
+
+	}
+
+	public static void printTable(){
+		Scanner console = new Scanner(System.in);
+        int num;
+        
+        System.out.print("Enter any positive integer: ");
+        num = console.nextInt();
+                
+        System.out.println("Multiplication Table of " + num);
+        
+        for(int i=1; i<=10; i++)
+        {
+            System.out.println(num +" x " + i + " = " + (num*i) );
+        }
+	}
+	public static void findDuplicate(int[] input){
+		for (int i : input) {
+			for (int j=i;j<input.length;j++){
+				if (input[i]==input[j]){
+					System.out.println("found an duplicate entry if "+ input[i]+"@locations"+i);
+				}
+			}
+			
+		}
+	}
+}
+

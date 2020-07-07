@@ -1,0 +1,18 @@
+package DummyTestCases1;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Demo002 {
+	public static Logger log=LogManager.getLogger(Demo002.class.getClass());
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		log.debug("Debug");
+		log.info("info");
+		log.error("error");
+		log.fatal("fatal");
+
+	}
+
+}

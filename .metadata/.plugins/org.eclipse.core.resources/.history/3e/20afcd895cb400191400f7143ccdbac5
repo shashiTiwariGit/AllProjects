@@ -1,0 +1,34 @@
+package Intro;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstSession {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\Jars and Requirement\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://edgedev09.jaggedpeak.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("userNameInput")).sendKeys("IDM\\stiwari");
+		driver.findElement(By.name("Password")).sendKeys("Kshitij@12");
+		driver.findElement(By.id("submitButton")).click();
+		driver.findElement(By.id("merchant-button")).click();
+		
+		driver.findElement(By.partialLinkText("Integration")).click();
+		driver.findElement(By.id("project-button")).click();
+		driver.findElement(By.partialLinkText("Dev09Project")).click();
+
+
+		System.out.println( driver.getTitle());
+		System.out.println(driver.getWindowHandle());
+
+		driver.findElement(By.className("caret-container")).click();
+		
+		driver.close();
+
+	}
+
+}

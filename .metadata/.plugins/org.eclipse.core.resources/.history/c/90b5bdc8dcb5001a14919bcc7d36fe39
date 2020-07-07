@@ -1,0 +1,53 @@
+package stepDefinations;
+
+import org.junit.runner.RunWith;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.junit.Cucumber;
+import pageObjects.LandingPage;
+import pageObjects.LoginPage;
+import utilities.Base;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.And;
+
+@RunWith(Cucumber.class)
+public class StepDefination extends Base{
+	LoginPage lp;
+
+	@Given("^initialize driver with chrome browser$")
+	public void initialize_driver_with_chrome_browser() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   driver = initializeDriver();
+	}
+
+	@Given("^Navigate to \"([^\"]*)\" site$")
+	public void navigate_to_site(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.get(arg1);
+	    
+	}
+
+	@Given("^Click on Login link on Home page to land on secure sign in page$")
+	public void click_on_Login_link_on_Home_page_to_land_on_secure_sign_in_page() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		LandingPage l = new LandingPage(driver);
+		lp = l.clickOnLogin();
+		
+	}
+
+	@When("^user enters \"([^\"]*)\" and \"([^\"]*)\" and logs in$")
+	public void user_enters_and_Password_and_logs_in(String username, String password) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		lp.getEmail().sendKeys(username);
+		
+		lp.getPassword().sendKeys(password);
+		
+	}
+
+	@Then("^Verfiy that user is succesfully logged in$")
+	public void verfiy_that_user_is_succesfully_logged_in() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+}

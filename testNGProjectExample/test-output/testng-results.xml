@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="35" started-at="2020-06-15T06:25:21Z" finished-at="2020-06-15T06:25:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="35" started-at="2020-06-15T06:25:21Z" finished-at="2020-06-15T06:25:21Z">
+      <class name="Test.HomeRelatedTestCases">
+        <test-method status="PASS" signature="beforeTestMethod()[pri:0, instance:Test.HomeRelatedTestCases@7ac7a4e4]" name="beforeTestMethod" is-config="true" duration-ms="6" started-at="2020-06-15T11:55:21Z" finished-at="2020-06-15T11:55:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method status="PASS" signature="webLogin()[pri:0, instance:Test.HomeRelatedTestCases@7ac7a4e4]" name="webLogin" duration-ms="4" started-at="2020-06-15T11:55:21Z" finished-at="2020-06-15T11:55:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webLogin -->
+        <test-method status="PASS" signature="APILogin()[pri:0, instance:Test.HomeRelatedTestCases@7ac7a4e4]" name="APILogin" duration-ms="2" started-at="2020-06-15T11:55:21Z" depends-on-methods="Test.HomeRelatedTestCases.webLogin" finished-at="2020-06-15T11:55:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- APILogin -->
+        <test-method status="PASS" signature="afterTestMethod()[pri:0, instance:Test.HomeRelatedTestCases@7ac7a4e4]" name="afterTestMethod" is-config="true" duration-ms="1" started-at="2020-06-15T11:55:21Z" finished-at="2020-06-15T11:55:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
+      </class> <!-- Test.HomeRelatedTestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

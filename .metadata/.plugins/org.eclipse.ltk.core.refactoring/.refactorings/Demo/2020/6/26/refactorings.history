@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;payloads&apos; to &apos;files&apos;&#x0D;&#x0A;- Original project: &apos;Demo&apos;&#x0D;&#x0A;- Original element: &apos;Demo/src/test/java/payloads&apos;&#x0D;&#x0A;- Renamed element: &apos;Demo/src/test/java/files&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;payloads&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/test\/java&lt;payloads" name="files" qualified="false" references="true" stamp="1593063222687" textual="false" version="1.0"/>
+</session>

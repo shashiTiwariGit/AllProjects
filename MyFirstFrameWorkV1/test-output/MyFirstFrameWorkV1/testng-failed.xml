@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [MyFirstFrameWorkV1]">
+  <test name="LoginTC001(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestCases001.LoginTC001">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- TestCases001.LoginTC001 -->
+    </classes>
+  </test> <!-- LoginTC001(failed) -->
+</suite> <!-- Failed suite [MyFirstFrameWorkV1] -->

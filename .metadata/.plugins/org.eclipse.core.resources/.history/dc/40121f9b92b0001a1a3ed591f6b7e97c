@@ -1,0 +1,34 @@
+package Utilities;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+public class Base {
+	// WebDriver creation
+	
+	public void initializeDriver() throws FileNotFoundException{
+		ReadConfig readConfig= new ReadConfig();
+		//Chrome
+		if (readConfig.getBrowser().equalsIgnoreCase("Chrome")){
+			System.setProperty("webdriver.chrome.driver",
+					"D:\\Training\\JarsandRequirement\\chromedriver_win32\\chromedriver1.exe");
+			
+		}
+		//FireFox
+		else if (readConfig.getBrowser().equalsIgnoreCase("FireFox")){
+			
+		}
+		//IE
+		else if (readConfig.getBrowser().equalsIgnoreCase("IE")){
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}

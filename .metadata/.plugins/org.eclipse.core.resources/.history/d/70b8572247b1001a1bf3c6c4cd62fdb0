@@ -1,0 +1,29 @@
+package Academy.E2EProject;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObjects.LandingPage;
+import pageObjects.LoginPage;
+import resources.Base;
+
+public class ContactNevigation extends Base{
+	@Test
+	public void getHomePage() throws IOException{
+		driver=initializeDriver();
+		
+		LandingPage l=new LandingPage(driver);
+		l.getContact().click();
+		Assert.assertTrue(driver.getTitle().equalsIgnoreCase("Rahul Shetty Academy"));
+		Assert.assertEquals(driver.getCurrentUrl(), "https://www.rahulshettyacademy.com/#/index");
+		driver.quit();
+		
+		
+	}
+	
+
+}

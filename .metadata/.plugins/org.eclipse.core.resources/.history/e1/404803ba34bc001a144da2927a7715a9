@@ -1,0 +1,26 @@
+package test;
+
+import java.util.HashMap;
+
+public class TestClass2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1="abc";
+		String s2="abc";
+		String s3=new String("abc");
+		String s4=s1;
+		System.out.println(s1==s2);
+		System.out.println(s4==s2);
+		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>(); 
+		String [] str= {"10:02","10:46","01:15","02:33"};
+		
+		for(int i =0; i<str.length;i++){
+			hm.put(i, Integer.parseInt(str[i].split(":")[1]));
+			
+		}
+		hm.values();
+
+	}
+
+}

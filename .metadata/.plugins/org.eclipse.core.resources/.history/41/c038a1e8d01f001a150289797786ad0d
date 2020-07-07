@@ -1,0 +1,74 @@
+package test;
+
+
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import Pages.edgeLogin;
+import jpGridPages.newOrderList;
+import ru.yandex.qatools.ashot.Screenshot;
+
+public class testClass {
+	
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub		
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\Jars and Requirement\\chromedriver_win32 (13)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		testClass test= new testClass();
+		//This method will login to Dev09
+		driver=edgeLogin.login(driver , "https://edgedev09.jaggedpeak.com/" , "IDM\\stiwari","Kshitij@14");
+		newOrderList orderlist= new newOrderList(driver);
+		Thread.sleep(1000);
+		//orderlist.pinning(driver , "USD");
+		//orderlist.sorting(driver, "Order #");
+		orderlist.clickFilters(driver, "order #");
+		TakesScreenshot screShot = ((TakesScreenshot)driver);
+		//File ScrFile=scrShot.getScreenshotAs(OutputType<T>.FILE);
+		driver.get("http://demo.guru99.com/V4/");
+
+        //Call take screenshot function
+		testClass.takeSnapShot(driver, "C:\\TestResults");
+
+      //  this.takeSnapShot(driver, "c://test.png") ;     
+		
+	}
+	 public void testGuru99TakeScreenShot(WebDriver driver) throws Exception{
+
+			
+	    	
+
+	        
+
+	        
+
+	        //Call take screenshot function
+
+	        this.takeSnapShot(driver, "c://test.png") ;     
+
+	    }
+	 public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+
+	        //Convert web driver object to TakeScreenshot
+
+	        TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+	        //Call getScreenshotAs method to create image file
+
+	                File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+	            //Move image file to new destination
+
+	                File DestFile=new File(fileWithPath);
+
+	                //Copy file at destination
+
+	                FileUtils.copyFile(SrcFile, DestFile);
+
+	    }
+
+
+}

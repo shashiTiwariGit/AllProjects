@@ -1,0 +1,19 @@
+package jira;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginToJira {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\Jars and Requirement\\chromedriver_win32 (13)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://jira.jaggedpeak.com/login.jsp");
+		driver.findElement(By.xpath("//input[@id='login-form-username']")).sendKeys("stiwari");
+		driver.findElement(By.xpath("//input[@id='login-form-password']")).sendKeys("Kshitij@14");
+
+	}
+
+}

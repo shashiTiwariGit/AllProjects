@@ -1,0 +1,17 @@
+package cucumberOptions;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.runtime.model.CucumberBackground;
+
+//feature file
+// Test Runner file
+
+@CucumberOptions(		
+		features="src/test/java/features",
+		glue="stepDefinations"
+		)
+public class TestRunner {
+
+}

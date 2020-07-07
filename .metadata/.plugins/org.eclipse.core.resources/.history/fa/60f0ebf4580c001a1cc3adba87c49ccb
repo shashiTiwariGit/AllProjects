@@ -1,0 +1,30 @@
+package EDGE;
+
+public class stringConcatination {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "ajit";
+		StringBuffer b = new StringBuffer(s);
+		b.reverse();
+		s=b.toString();
+		System.out.println(s);
+		String t = "";
+		t=t+s.charAt(0);
+		System.out.println(t);
+		System.out.println(recursive("shashi"));
+		
+
+	}
+	public static String recursive (String value)
+	{
+		
+		if (value.length()==0)
+			return value;
+		if (value.length()==1)
+			return value;
+		return recursive (value.substring(1))+value.charAt(1);
+		return value; 
+	}
+
+}

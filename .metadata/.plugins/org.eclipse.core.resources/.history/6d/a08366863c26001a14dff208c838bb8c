@@ -1,0 +1,26 @@
+package test;
+
+public class JavaPrograms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] input = { 0, 7, 11, 4, 43, 71, 4, 23, 11 };
+		nextGreaterNumber(input);
+	}
+
+	public static void nextGreaterNumber(int[] input) {
+		for (int i = 0; i < input.length - 1; i++) {
+			int temp = -1;
+			for (int j = i + 1; j < input.length; j++) {
+				if (input[i] < input[j]) {
+					temp = input[j];
+					break;
+				} else j++;
+					
+			}
+			System.out.print(temp + ",");
+		}
+
+	}
+
+}

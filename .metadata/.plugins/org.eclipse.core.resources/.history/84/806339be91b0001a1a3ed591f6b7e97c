@@ -1,0 +1,20 @@
+package Utilities;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+public class Base {
+	// WebDriver creation
+	
+	public void initializeDriver() throws FileNotFoundException{
+		
+		//Chrome
+		
+		
+		//FireFox
+		
+		//IE
+	}
+
+}

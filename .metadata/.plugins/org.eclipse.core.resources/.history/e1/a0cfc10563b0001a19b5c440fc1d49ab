@@ -1,0 +1,10 @@
+11:45:44.469 [main] DEBUG java.lang.Class - Debug
+11:45:44.474 [main] INFO  java.lang.Class - info
+11:45:44.475 [main] ERROR java.lang.Class - error
+11:45:44.475 [main] FATAL java.lang.Class - fatal
+11:46:34.514 [main] DEBUG java.lang.Class - Debug
+11:46:34.520 [main] INFO  java.lang.Class - info
+11:46:34.520 [main] ERROR java.lang.Class - error
+11:46:34.520 [main] FATAL java.lang.Class - fatal
+11:46:49.083 [main] DEBUG java.lang.Class - Debug
+11:46:49.089 [main] INFO  java.lang.Class - info

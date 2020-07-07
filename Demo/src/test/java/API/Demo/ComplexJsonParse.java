@@ -1,0 +1,45 @@
+package API.Demo;
+
+import java.util.ArrayList;
+
+import org.testng.Assert;
+
+import files.Payload;
+import groovyjarjarantlr4.v4.parse.ANTLRParser.sync_return;
+import io.restassured.path.json.JsonPath;
+
+public class ComplexJsonParse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JsonPath js = new JsonPath(Payload.coursePrice());
+		int count=js.getInt("courses.size()");
+		System.out.println(count);
+		// Print purchase amounts
+		int purchaseAmount=js.getInt("dashboard.purchaseAmount");
+		System.out.println(purchaseAmount);
+		//Print title of first title
+		String firstCourse= js.get("courses[2].title");
+		System.out.println(firstCourse);
+		//Print all cource name and prices
+		int amount=0;
+		for (int i = 0; i < count; i++) {
+			String title=js.get("courses["+i+"].title");
+			System.out.println(title);
+			if(title.equals("RPA"))
+			System.out.println("Number of Copies sold="+js.get("courses["+i+"].copies"));
+			int price=js.get("courses["+i+"].price");
+			
+			int copies=js.get("courses["+i+"].copies");
+			
+			amount=amount+price*copies;
+			System.out.println(amount);
+			
+		}
+		// Verify if Purchase amount = sum of all cources
+		Assert.assertEquals(purchaseAmount, amount);
+		System.out.println(amount==purchaseAmount);
+
+	}
+
+}

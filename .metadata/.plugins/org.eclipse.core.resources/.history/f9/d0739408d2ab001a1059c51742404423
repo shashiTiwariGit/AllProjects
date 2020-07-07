@@ -1,0 +1,42 @@
+package test;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Scope {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\Training\\JarsandRequirement\\chromedriver_win32\\chromedriver1.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
+		//1. get count of links
+		List<WebElement> l = driver.findElements(By.cssSelector("a"));
+		System.out.println(l.size());
+		//2. get link in Footer
+		//limiting WebDriver scope
+		WebElement footer=driver.findElement(By.xpath("//div[@class=' footer_top_agile_w3ls gffoot footer_style']"));
+		System.out.println(footer.findElements(By.cssSelector("a")).size());
+		//3. limiting to a single Column
+		WebElement firstColumn= footer.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
+		System.out.println(firstColumn.findElements(By.cssSelector("a")).size());
+		//4. Click on each link on the FirstColumn
+		Actions a= new Actions(driver); 
+		List<WebElement> l1 = firstColumn.findElements(By.cssSelector("a"));
+		for(int i=1;i<l1.size();i++){
+			
+			l1.get(i).click();
+			System.out.println(i);
+			
+		}
+	}
+
+}

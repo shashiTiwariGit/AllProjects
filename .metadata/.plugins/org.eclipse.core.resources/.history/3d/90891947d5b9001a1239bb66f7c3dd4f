@@ -1,0 +1,17 @@
+package oAuth2Example;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class OAuthExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		given().log().all().queryParam("access_token", )
+		.when().get("/getCourse.php")
+		.then().log().all();
+
+	}
+
+}

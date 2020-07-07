@@ -1,0 +1,21 @@
+package StartingTestCases;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelDataTest {
+	//Create object of XSSF Work Book class
+	//Get access to sheet
+	// Get access of all the row
+	public static void main(String [] args) throws FileNotFoundException{
+		//File Input Stream
+		FileInputStream fis= new FileInputStream("D:\\Training\\Workspace\\MavenJava\\TestData\\DataDemo.xlsx");
+		
+		XSSFWorkbook workBook = new XSSFWorkbook();
+		
+	}
+	
+
+}

@@ -1,0 +1,45 @@
+package StartingTestCases;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelDataTest {
+	//Create object of XSSF Work Book class
+	//Get access to sheet
+	// Identify Test cases column
+	// Scan Test cases column and Search for Purchase Test case
+	// Pull all the data for Purchase test case data
+	// Get access of all the row
+	
+	public static void main(String [] args) throws IOException{
+		//File Input Stream
+		FileInputStream fis= new FileInputStream("D:\\Training\\Workspace\\MavenJava\\TestData\\DataDemo.xlsx");
+		
+		XSSFWorkbook workBook = new XSSFWorkbook(fis);
+		int countOfSheet=workBook.getNumberOfSheets();
+		for (int i=0;i<countOfSheet;i++){
+			if(workBook.getSheetAt(i).getSheetName().equals("TestData")){
+				XSSFSheet sheet=workBook.getSheetAt(i);
+				Iterator<Row> rows=  sheet.iterator();
+				Row firstRow=rows.next();
+				Iterator cells=firstRow.cellIterator();
+				while(cells.hasNext()){
+					Cell value=(Cell) cells.next();
+					System.out.println(value.getStringCellValue());
+						
+					}
+				}
+				
+			}
+			
+		}
+	}
+	
+

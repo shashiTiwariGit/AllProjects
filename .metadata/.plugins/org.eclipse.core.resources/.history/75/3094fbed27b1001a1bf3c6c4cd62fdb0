@@ -1,0 +1,15 @@
+package Academy.E2EProject;
+
+import java.io.FileNotFoundException;
+
+import org.testng.annotations.Test;
+
+public class HomePage extends Base{
+	@Test
+	public void getHomePage() throws FileNotFoundException{
+		driver=initializeDriver();
+		driver.get(prop.getProperty("BaseUrl"));
+		
+	}
+
+}

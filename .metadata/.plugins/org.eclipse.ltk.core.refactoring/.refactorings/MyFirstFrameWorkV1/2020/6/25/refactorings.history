@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;chromedriver1.exe&apos; to &apos;Browsers&apos;&#x0D;&#x0A;- Original project: &apos;MyFirstFrameWorkV1&apos;&#x0D;&#x0A;- Destination element: &apos;Browsers&apos;&#x0D;&#x0A;- Original element: &apos;chromedriver1.exe&apos;" description="Copy file" element1="Drivers/chromedriver1.exe" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1592395230448" target="/E2E/Browsers" units="0" version="1.0"/>
+</session>

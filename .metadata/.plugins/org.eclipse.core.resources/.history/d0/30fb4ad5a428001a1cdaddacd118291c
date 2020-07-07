@@ -1,0 +1,112 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class JavaPrograms {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> input1= new ArrayList<Integer>();
+		//int[] input = {7,56,20,4,4,5,7,7,5,6,9,32};
+		input1.add(7);
+		input1.add(4);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(3);
+		input1.add(7);
+		input1.add(7);
+		input1.add(7);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(9);
+		input1.add(7);
+		
+		System.out.println(input1);
+		
+		//nextGreaterNumber(input);
+		//input1=findDuplicate(input1);
+		System.out.println(numberOfOccurances(input1));
+		//printTable();
+	}
+
+	public static void nextGreaterNumber(int[] input) {
+		for (int i = 0; i < input.length; i++) {
+			int temp = -1;
+			for (int j = i + 1; j < input.length; j++) {
+				if (input[i] < input[j]) {
+					temp = input[j];
+					break;
+				} 
+			}
+			System.out.print(temp + ",");
+		}
+
+	}
+
+	public static void printTable(){
+		Scanner console = new Scanner(System.in);
+        int num;
+        
+        System.out.print("Enter any positive integer: ");
+        num = console.nextInt();
+                
+        System.out.println("Multiplication Table of " + num);
+        
+        for(int i=1; i<=10; i++)
+        {
+            System.out.println(num +" x " + i + " = " + (num*i) );
+        }
+	}
+	public static void findDuplicate(int[] input){
+		for (int i=0;i<input.length;i++) {
+			for (int j=i+1;j<input.length;j++){
+				if (input[i]==input[j]){
+					System.out.println("found one Duplicate number"+input[i]);
+				}
+			}
+			
+		}
+	}
+		
+	
+	public static ArrayList<Integer> findDuplicate(ArrayList<Integer> input1){
+		for (int i=0;i<input1.size();i++) {
+			for(int j = i+1;j<input1.size();j++ ){
+				if (input1.get(i)==input1.get(j)){
+					
+					input1.remove(j);
+					j=j-1;
+				}
+			}
+			
+		}
+		return input1;
+	}
+	public static Map<Integer,Integer> numberOfOccurances(ArrayList<Integer> input1){
+		Map <Integer,Integer> output= new HashMap<Integer,Integer>();
+		for (int i=0;i<input1.size();i++) {
+			int temp=1;
+			
+			for(int j = i+1;j<input1.size();j++ ){
+				if (input1.get(i)==input1.get(j)){
+					
+					temp++;
+					
+				}
+			
+			}
+			output.put(input1.get(i), temp);
+		}
+		return output;
+		
+	}
+}
+

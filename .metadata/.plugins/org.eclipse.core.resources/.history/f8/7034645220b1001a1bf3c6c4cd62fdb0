@@ -1,0 +1,19 @@
+package Academy;
+
+import java.io.FileNotFoundException;
+
+import org.testng.annotations.Test;
+
+import Utilities.MyBaseClass;
+
+public class HomePage extends MyBaseClass{
+
+	
+	@Test
+	public void basePageNavigation() throws FileNotFoundException{
+		driver=initializeDriver();
+		goToTestPage(driver);
+		
+	}
+
+}

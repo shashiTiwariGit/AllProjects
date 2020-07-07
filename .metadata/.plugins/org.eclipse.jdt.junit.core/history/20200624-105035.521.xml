@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (1)" project="E2EProject" tests="5" started="5" failures="0" errors="0" ignored="5">
+  <testsuite name="cucumberOptions.TestRunner" time="0.0">
+    <testsuite name="Feature: Login into Application" time="0.0">
+      <testsuite name="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" incomplete="true">
+        <skipped/>
+        <testcase name="Given initialize driver with chrome browser" classname="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" ignored="true"/>
+        <testcase name="And Navigate to &quot;QAClickAcademy&quot; site" classname="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" ignored="true"/>
+        <testcase name="And Click on Login link on Home page to land on secure sign in page" classname="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" ignored="true"/>
+        <testcase name="When user enters &quot;Username&quot; and Password and logs in" classname="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" ignored="true"/>
+        <testcase name="Then Verfiy that user is succesfully logged in" classname="Scenario: Login to page using username &quot;&quot; and password &quot;&quot;" time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

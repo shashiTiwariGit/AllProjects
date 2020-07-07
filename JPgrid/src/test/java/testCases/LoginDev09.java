@@ -1,0 +1,22 @@
+package testCases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginDev09 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\JarsandRequirement\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+		driver.get("https://edgedev09.jaggedpeak.com/");
+		driver.findElement(By.id("userNameInput")).sendKeys("idm\\stiwari");
+		driver.findElement(By.id("passwordInput")).sendKeys("Kshitij@16");
+		driver.findElement(By.id("submitButton")).click();
+		System.out.println(driver.getCurrentUrl().equalsIgnoreCase("https://edgedev09.jaggedpeak.com/index.jp?edge=login.chooseMerchant"));
+		driver.findElement(By.cssSelector("#merchant-button")).click();
+		
+	}
+
+}

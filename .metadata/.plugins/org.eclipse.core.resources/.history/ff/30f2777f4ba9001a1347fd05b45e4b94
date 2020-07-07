@@ -1,0 +1,12 @@
+package testCases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginPage {
+	
+	public static void Main(String [] args){
+		System.setProperty("webdriver.chrome.driver", "D:\\Training\\JarsandRequirement\\chromedriver.exe");
+	}
+
+}

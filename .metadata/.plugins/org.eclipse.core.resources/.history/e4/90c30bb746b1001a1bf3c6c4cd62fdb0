@@ -1,0 +1,23 @@
+package Academy.E2EProject;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pageObjects.LandingPage;
+import resources.Base;
+
+public class ValidateText extends Base{
+	
+	@Test
+	public void getTextValue() throws IOException{
+		driver= initializeDriver();
+		driver.get(prop.getProperty("BaseUrl"));
+		LandingPage lp= new LandingPage(driver);
+		Assert.assertEquals(lp.getTitle().getText(), "FEATURED COURSES");
+		
+		
+	}
+
+}

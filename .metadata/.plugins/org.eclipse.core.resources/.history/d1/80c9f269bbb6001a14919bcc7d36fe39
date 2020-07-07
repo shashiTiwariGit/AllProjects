@@ -1,0 +1,22 @@
+package API.Demo;
+
+import files.Payload;
+import io.restassured.path.json.JsonPath;
+
+public class ComplexJsonParse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JsonPath js = new JsonPath(Payload.coursePrice());
+		int coutn=js.getInt("courses.size()");
+		System.out.println(coutn);
+		// Print purchase amounts
+		int purchaseAmount=js.getInt("dashboard.purchaseAmount");
+		System.out.println(purchaseAmount);
+		//Print title of first title
+		String firstCourse= js.get("courses[0].title");
+		System.out.println(firstCourse);
+
+	}
+
+}
